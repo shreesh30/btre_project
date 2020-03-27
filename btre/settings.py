@@ -152,3 +152,6 @@ EMAIL_HOST_USER='shreesharya20@gmail.com'
 EMAIL_HOST_USER='Aaron_stone12091995'
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
+
+import django_heroku
+django_heroku.settings(locals())
