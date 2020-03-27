@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'contacts',
     'django.contrib.humanize',
+    'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
@@ -134,3 +136,19 @@ STATICFILES_DIRS=[
 # media folder settings
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
+
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS={
+    messages.ERROR:'danger'
+}
+
+#email config
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='shreesharya20@gmail.com'
+EMAIL_HOST_USER='Aaron_stone12091995'
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
