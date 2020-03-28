@@ -157,13 +157,7 @@ EMAIL_HOST_USER='Aaron_stone12091995'
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 
-import django_heroku
-django_heroku.settings(locals())
-
-# SECRET_KEY = config('SECRET_KEY')
-# DEBUG = config('DEBUG', default=False, cast=bool)
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=config('DATABASE_URL')
-#     )
-# }
+try:
+    from .local_settings import *
+except ImportError:
+    pass
