@@ -1,9 +1,11 @@
 asgiref==3.2.3
 astroid==2.3.3
+chicken==0.1.0
 dj-database-url==0.5.0
 Django==3.0.4
 django-heroku==0.3.1
 docopt==0.6.2
+egg==0.2.0
 ez-setup==0.9
 GDAL==3.0.4
 gitignore==0.0.8

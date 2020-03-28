@@ -136,6 +136,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'btre/static')
     ]
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # media folder settings
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
@@ -158,3 +159,11 @@ EMAIL_USE_SSL=False
 
 import django_heroku
 django_heroku.settings(locals())
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
